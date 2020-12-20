@@ -31,7 +31,7 @@ class Question_Answer:
         cql = 'match (n:高管)-[:董事会成员]->(p:企业) where p.name=\'{}\' return n.name'.format(key_dict['ns'])
         result = self.graph.run(cql).data()
         executives = '、'.join([item['n.name'] for item in result])
-        answer = '{}企业的企业代码为{};\n该企业的高管团队成员有{};\n该企业从事{}和属于{}概念。\n'.format(key_dict['ns'], code, executives, industry, concept)
+        answer = '{}企业的企业代码为{};\n该企业的高管团队成员有{};\n该企业从事{}和属于{}概念。'.format(key_dict['ns'], code, executives, industry, concept)
         return answer
 
 
